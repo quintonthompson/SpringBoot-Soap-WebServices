@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.quintonthompson.com/courses"
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.quintonthompson.com/courses"
         xmlns:tns="http://www.quintonthompson.com/courses"
         elementFormDefault="qualified">
-  <element name="GetCourseDetailsRequest">
-    <complexType>
-      <sequence>
-          <element name="id" type="int"/>
-      </sequence>
-    </complexType>
-  </element>
-  <element name="GetCourseDetailsResponse">
-    <complexType>
-      <sequence>
-        <element name="CourseDetails" type="tns:CourseDetails"/>
-      </sequence>
-    </complexType>
-  </element>
+  <xs:element name="GetCourseDetailsRequest">
+    <xs:complexType>
+      <xs:sequence>
+          <xs:element name="id" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCourseDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="CourseDetails" type="tns:CourseDetails"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 
-  <complexType name="CourseDetails">
-    <sequence>
-      <element name="id" type="int"/>
-      <element name="name" type="string"/>
-      <element name="description" type="string"/>
-    </sequence>
-  </complexType>
+  <xs:complexType name="CourseDetails">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="description" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
 
-</schema>
+</xs:schema>
 
         <!--<GetCourseDetailsRequest targetNamespace="http://www.quintonthompson.com/courses">-->
         <!--<id>123</id>-->
