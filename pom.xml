@@ -67,7 +67,7 @@
 				</executions>
 				<configuration>
 					<!-- The package of your generated sources -->
-					<packageName>com.thompson.course-details</packageName>
+					<packageName>com.thompson.coursedetails</packageName>
 					<sources>
 						<source>src/main/resources/course-details.xsd</source>
 					</sources>
