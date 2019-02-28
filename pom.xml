@@ -50,6 +50,29 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<!--JAXB2 Maven Plugin-->
+			<!--XSD Source Folder-->
+			<!--Java Object Source Folder-->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxb2-maven-plugin</artifactId>
+				<version>2.4</version>
+				<executions>
+					<execution>
+						<id>xjc</id>
+						<goals>
+							<goal>xjc</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<!-- The package of your generated sources -->
+					<packageName>com.thompson.course-details</packageName>
+					<sources>
+						<source>src/main/resources/course-details.xsd</source>
+					</sources>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
