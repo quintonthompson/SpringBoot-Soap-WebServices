@@ -14,7 +14,7 @@ public class CourseDetailsEndpoint {
     //input-GetCourseDetailsRequest
     //output-GetCourseDetailsResponse
 
-    @PayloadRoot(namespace = "http://quintonthompson.com/courses",localPart = "GetCourseDetailsRequest")//if request has these names it will map to this method
+    @PayloadRoot(namespace = "http://www.quintonthompson.com/courses",localPart = "GetCourseDetailsRequest")//if request has these names it will map to this method
     @ResponsePayload //This method will contain the response payload
     public GetCourseDetailsResponse processCourseDetailsRequest(@RequestPayload GetCourseDetailsRequest request){
         GetCourseDetailsResponse response = new GetCourseDetailsResponse();
