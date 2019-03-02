@@ -3,7 +3,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.quintonthompson.com/courses"
         xmlns:tns="http://www.quintonthompson.com/courses"
         elementFormDefault="qualified">
-  <!--Request-->
+  <!--Get Course Detail Request-->
   <xs:element name="GetCourseDetailsRequest">
     <xs:complexType>
       <xs:sequence>
@@ -12,7 +12,7 @@
     </xs:complexType>
   </xs:element>
 
-  <!--Response-->
+  <!--Get Course Detail Response-->
   <xs:element name="GetCourseDetailsResponse">
     <xs:complexType>
       <xs:sequence>
