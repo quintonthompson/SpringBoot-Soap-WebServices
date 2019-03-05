@@ -58,5 +58,15 @@ public class CourseDetailsEndpoint {
         }
         return response;
     }
+
+    @PayloadRoot(namespace = "http://www.quintonthompson.com/courses", localPart = "DeleteCourseDetailsRequest")
+    @ResponsePayload
+    public DeleteCourseDetailsResponse deleteCourseDetailsRequest(@RequestPayload DeleteCourseDetailsRequest request){
+       int status = service.deleteById(request.getId());
+
+       DeleteCourseDetailsResponse response = new DeleteCourseDetailsResponse();
+       response.setStatus(status);
+       return response;
+    }
 }
 
