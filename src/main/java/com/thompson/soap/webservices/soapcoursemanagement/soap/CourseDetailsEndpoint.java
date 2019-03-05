@@ -3,6 +3,7 @@ package com.thompson.soap.webservices.soapcoursemanagement.soap;
 import com.thompson.coursedetails.*;
 import com.thompson.soap.webservices.soapcoursemanagement.soap.bean.Course;
 import com.thompson.soap.webservices.soapcoursemanagement.soap.service.CourseDetailsService;
+import com.thompson.soap.webservices.soapcoursemanagement.soap.service.CourseDetailsService.Status;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
@@ -62,11 +63,21 @@ public class CourseDetailsEndpoint {
     @PayloadRoot(namespace = "http://www.quintonthompson.com/courses", localPart = "DeleteCourseDetailsRequest")
     @ResponsePayload
     public DeleteCourseDetailsResponse deleteCourseDetailsRequest(@RequestPayload DeleteCourseDetailsRequest request){
-       int status = service.deleteById(request.getId());
+        //instead of an int it returns the enum status of success or failure
+      Status status = service.deleteById(request.getId());
 
        DeleteCourseDetailsResponse response = new DeleteCourseDetailsResponse();
-       response.setStatus(status);
+       //Have to map the status here to the bean DeleteStatus
+       response.setStatus(mapStatus(status));
        return response;
+    }
+
+    //mapping status returned by CourseDetailsService to the DeleteStatus bean created by jaxb
+    private DeleteStatus mapStatus(Status status) {
+        if(status == Status.FAILURE){
+            return DeleteStatus.FAILURE;
+        }
+        return DeleteStatus.SUCCESS;
     }
 }
 
